@@ -411,11 +411,14 @@ footer {
         background-repeat: no-repeat;
         background-position: right bottom;
         background-size: contain;
-        display: none;
+        /* display: none; */
+        transform: translateX(-100%);
+        transition: transform 0.3s;
     }
-
+    
     .nav__menu.active {
-        display: flex;
+        /* display: flex; */
+        transform: translateX(0);
     }
 
     .nav__menu a {
