@@ -61,6 +61,7 @@ h1, h2, h3 {
     letter-spacing: 1px;
     text-transform: uppercase;
     font-weight: var(--fw-bold);
+    transition: all 300ms ease;
 }
 
 .btn:hover {
@@ -260,6 +261,7 @@ footer {
 
 .footer__social a{
     color: var(--dark-grayish-violet);
+    transition: all 400ms ease;
 }
 
 .footer__social a:hover{
@@ -314,7 +316,7 @@ footer {
     }
 
 /* ===========================================
-                Media Query(Header)
+                MQ Laptop(Header)
 =============================================*/
     .header__img {
         top: 35%;
@@ -332,7 +334,7 @@ footer {
     }
 
 /* ===========================================
-                Media Query(Feature)
+                MQ Laptop(Feature)
 =============================================*/
     main {
     padding: 14rem 6rem 6rem;
@@ -362,7 +364,7 @@ footer {
     }
 
 /* ===========================================
-                Media Query(Work)
+                MQ Laptop(Work)
 =============================================*/
     .how-we-work {
         padding: 2rem 2rem;
@@ -372,7 +374,7 @@ footer {
         line-height: 2.8rem;
     }
 /* ===========================================
-                Media Query(Footer)
+                MQ Laptop(Footer)
 =============================================*/
     footer {
         padding: 4rem 6rem;
@@ -380,13 +382,9 @@ footer {
 }
 
 /* ===========================================
-                Media Query(Tablet)
+                MQ Tablet(Navbar)
 =============================================*/
 @media screen and (max-width: 50em) {
-    body {
-        background-color: red;
-    }
-
     nav {
         padding: 2rem 2rem;
     }
@@ -405,7 +403,7 @@ footer {
         align-items: center;
         position: absolute;
         background-color: var(--dark-violet);
-        inset: 10% 0 0;
+        inset: 6.3125rem 0 0;
         flex-direction: column;
         z-index: 1;
         padding-top: 2rem;
@@ -414,6 +412,10 @@ footer {
         background-position: right bottom;
         background-size: contain;
         display: none;
+    }
+
+    .nav__menu.active {
+        display: flex;
     }
 
     .nav__menu a {
@@ -437,17 +439,162 @@ footer {
     }
 
 /* ===========================================
-                Media Query(Header)
+                MQ Tablet(Header)
 =============================================*/
     header {
-        /* display: flex;
-        flex-direction: column-reverse; */
         padding: 0;
-        /* width: 100%; */
+        background-image: none;
     }
 
     .header__img {
         position: static;
         width: 100%;
+    }
+
+    .header__line {
+        display: none;
+    }
+
+    .header__content {
+        background-image: url(/images/bg-pattern-intro-left-mobile.svg);
+        background-repeat: no-repeat;
+        background-position: left top;
+        padding: 5rem 1.5rem 6rem;
+    }
+
+    .header__content::after {
+        content: "";
+        background-image: url(/images/bg-pattern-intro-right-mobile.svg);
+        position: absolute;
+        background-repeat: no-repeat;
+        right: 0%;
+        width: 100%;
+        height: 100%;
+        background-position: right top;
+    }
+
+    header::after {
+        display: none;
+    }
+
+/* ===========================================
+                MQ Tablet(Feature)
+=============================================*/
+    main {
+    padding: 11rem 2rem 5rem;
+    }
+
+    .features {
+        text-align: center;
+    }
+
+    .line {
+        width: 8rem;
+        margin: 0 auto 3rem;
+    }
+
+    .feature-f-box {
+        gap: 4rem;
+        flex-wrap: wrap;
+    }
+
+    .feature img {
+        margin: 0 auto;
+        width: 5rem;
+    }
+
+    .feature__title {
+        font-size: 2.2rem;
+    }
+
+/* ===========================================
+                MQ Tablet(Work)
+=============================================*/
+    .work__heading {
+        font-size: 1.5rem;
+        line-height: 1.8rem;
+    }
+
+/* ===========================================
+                MQ Tablet(Footer)
+=============================================*/
+    footer {
+        padding: 4rem 2rem;
+    }
+}
+
+/* ===========================================
+                MQ Mobile(Header)
+=============================================*/
+@media screen and (max-width: 30.5em) {
+    .header__content {
+        text-align: center;
+    }
+
+    .header__heading {
+        font-size: 2.8rem;
+    }
+
+    .header__desc {
+        line-height: 1.65rem;
+    }
+
+    .header__cta {
+        margin: 2rem auto 0;
+    }
+
+/* ===========================================
+                MQ Mobile(Feature)
+=============================================*/
+    .feature__heading {
+        font-size: 2.8rem;
+        margin: 1.5rem 0 3rem;
+    }
+
+    .feature__title {
+        font-size: 1.8rem;
+    }
+
+/* ===========================================
+                MQ Mobile(Work)
+=============================================*/
+    .how-we-work {
+        flex-direction: column;
+        text-align: center;
+        background-image: url(/images/bg-pattern-how-we-work-mobile.svg);
+        background-repeat: no-repeat;
+        background-position: top right;
+        gap: 2rem;
+        padding: 2rem 1.1rem;
+    }
+
+    .work__heading {
+        font-size: 2rem;
+    }
+
+/* ===========================================
+                MQ Mobile(Footer)
+=============================================*/
+
+    .footer {
+        background-image: url(/images/bg-pattern-footer-mobile.svg);
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: contain;
+    }
+
+    .footer__top {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .footer__bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer__detail-title {
+        margin: 2rem;
     }
 }
